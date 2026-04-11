@@ -1,12 +1,26 @@
 #pragma once
 
+#include <stdint.h>
+#include "glad/glad.h"
+#include <glfw/glfw3.h>
+
+
+// Graphics Buffer config
+
+// Graphics Buffer sizing config
+#define BUFFERED_FRAME_COUNT 3
+#define GB_PEAK_MODEL_BYTES 1024 //Place holders until a peak byte count can be accurately calculated
+#define GB_PEAK_LIGHTING_BYTES 0 //Place holders until a peak byte count can be accurately calculated 
 
 
 
+#define GL_FLAGS_STORAGE (GL_MAP_WRITE_BIT | GL_MAP_PERSISTENT_BIT | GL_MAP_COHERENT_BIT) 
+#define GL_FLAGS_MAP (GL_MAP_WRITE_BIT | GL_MAP_PERSISTENT_BIT | GL_MAP_COHERENT_BIT)
 
-// SBO config
+#define MODEL_BINDING_INDEX 0
+#define LIGHT_BINDING_INDEX 1
+
 #define FENCE_SYNC_TIMEOUT 1000000ULL
 
-#define SBO_SLICE_COUNT 3
-#define SBO_PEAK_SLICE_SIZE 1024
-#define SBO_BUFFER_SIZE (SBO_PEAK_SLICE_SIZE * SBO_SLICE_COUNT)
+
+
