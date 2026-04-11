@@ -4,7 +4,7 @@
 */
 
 typedef struct {
-    EngRenderer_t renderer;
+    SBO_t* sbo;
 }EngCore_t;
 
 

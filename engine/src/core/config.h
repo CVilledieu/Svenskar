@@ -1,0 +1,12 @@
+#pragma once
+
+
+
+
+
+// SBO config
+#define FENCE_SYNC_TIMEOUT 1000000ULL
+
+#define SBO_SLICE_COUNT 3
+#define SBO_PEAK_SLICE_SIZE 1024
+#define SBO_BUFFER_SIZE (SBO_PEAK_SLICE_SIZE * SBO_SLICE_COUNT)

@@ -1,12 +1,13 @@
 #include "core/core.h"
-#include "core/config/config.h"
-#include "core/render/render.h"
+#include "core/config.h"
+#include "core/draw/sbuffer.h"
 #include <stdlib.h>
-
 
 
 EngCore_t* Core_Init(void){
     EngCore_t* core = malloc(sizeof(EngCore_t));
+
+    core->sbo = SBufferObject_Init();
 
     return core;
 }
