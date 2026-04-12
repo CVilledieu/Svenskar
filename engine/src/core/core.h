@@ -2,13 +2,12 @@
 /* Hook in api for root to access core functions
 
 */
-typedef struct Renderer_t{
+typedef struct RenderSystem_t{
 
-} Renderer_t;
+} RenderSystem_t;
 
 typedef struct {
-    FrameBuffer_t* fBuffer;
-    Canvas_t* canvas;
+
 }EngCore_t;
 
 

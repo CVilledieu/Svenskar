@@ -13,4 +13,5 @@ typedef struct GLFWwindow Canvas_t;
 // } CanvasCtx_t;
 
 
-uint8_t NewCanvas(Canvas_t* canvas, int width, int height, const char* title);
+Canvas_t* NewCanvas(int width, int height, const char* title);
+uint8_t DisplayCanvas(Canvas_t* canvas);

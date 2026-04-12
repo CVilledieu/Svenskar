@@ -8,9 +8,9 @@
 // Graphics Buffer config
 
 // Graphics Buffer sizing config
-#define BUFFERED_FRAME_COUNT 3
-#define GB_PEAK_MODEL_BYTES 1024 //Place holders until a peak byte count can be accurately calculated
-#define GB_PEAK_LIGHTING_BYTES 0 //Place holders until a peak byte count can be accurately calculated 
+#define FBUFFER_FRAME_COUNT 3
+#define FRAME_PEAK_MODEL_BYTES 1024 //Place holders until a peak byte count can be accurately calculated
+#define FRAME_PEAK_LIGHTING_BYTES 0 //Place holders until a peak byte count can be accurately calculated 
 
 
 

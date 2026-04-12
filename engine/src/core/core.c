@@ -7,7 +7,7 @@
 EngCore_t* Core_Init(void){
     EngCore_t* core = malloc(sizeof(EngCore_t));
 
-    core->fBuffer = RingBufferInit();
+    
 
     return core;
 }

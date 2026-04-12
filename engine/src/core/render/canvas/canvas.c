@@ -22,9 +22,11 @@ uint8_t DisplayCanvas(Canvas_t* canvas){
 
 
 
-uint8_t NewCanvas(Canvas_t* canvas, int width, int height, const char* title){
-    if(!canvas || !glfwInit()){
-        return 0;
+
+
+Canvas_t* NewCanvas(int width, int height, const char* title){
+    if(!glfwInit() || !width || !height){
+        return NULL;
     }
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
@@ -33,13 +35,13 @@ uint8_t NewCanvas(Canvas_t* canvas, int width, int height, const char* title){
 
     glfwWindowHint(GLFW_VISIBLE, GL_FALSE);
 
-    canvas = glfwCreateWindow(width, height, title, NULL, NULL);
+    Canvas_t* canvas = glfwCreateWindow(width, height, title, NULL, NULL);
     glfwMakeContextCurrent(canvas);
     if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
-        return 0;
+        return NULL;
     }
 
     glfwSetFramebufferSizeCallback(canvas, ResizeCallBackCanvas);
 
-    return 1;
+    return canvas;
 }
