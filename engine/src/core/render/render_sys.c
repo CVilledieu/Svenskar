@@ -13,3 +13,15 @@ uint8_t RenderSystemInit(RenderSystem_t* rSys){
 
     return 1;
 }
+
+
+uint8_t DrawStep(RenderSystem_t* rSys){
+    if(!rSys){
+        return 0;
+    }
+    
+
+
+
+    return 1;
+}
