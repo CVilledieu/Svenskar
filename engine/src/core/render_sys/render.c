@@ -1,8 +1,8 @@
-#include "render_sys.h"
+#include "render.h"
 #include "frame/fbuffer.h"
 #include "canvas/canvas.h"
 
-uint8_t RenderSystemInit(RenderSystem_t* rSys){
+uint8_t RenderSystem_Init(RenderSystem_t* rSys){
     if(!rSys){
         return 0;
     }

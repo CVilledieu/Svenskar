@@ -2,12 +2,9 @@
 /* Hook in api for root to access core functions
 
 */
-typedef struct RenderSystem_t{
-
-} RenderSystem_t;
 
 typedef struct {
-
+    RenderSystem_t* renderSys;
 }EngCore_t;
 
 

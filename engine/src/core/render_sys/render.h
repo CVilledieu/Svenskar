@@ -6,4 +6,4 @@ typedef struct RenderSystem_t{
     Canvas_t* mainCanvas;
 } RenderSystem_t;
 
-uint8_t RenderSystemInit(RenderSystem_t* rSys);
+uint8_t RenderSystem_Init(RenderSystem_t* rSys);
