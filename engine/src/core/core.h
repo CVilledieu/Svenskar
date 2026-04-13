@@ -3,10 +3,15 @@
 
 */
 
-typedef struct {
-    RenderSystem_t* renderSys;
-}EngCore_t;
+
+
+typedef struct GraphicsEngine_t{
+    FrameBuffer_t* frameBuffer;
+    Canvas_t* mainCanvas;
+    Materials_t* materials;
+}GraphicsEngine_t;
 
 
 
-EngCore_t* Core_Init(void);
+uint8_t GraphicsEngine_Init(GraphicsEngine_t* eng);
+void DrawStep(GraphicsEngine_t* eng);

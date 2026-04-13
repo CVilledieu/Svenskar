@@ -1,19 +1,30 @@
-#include "core/core.h"
-#include "core/config.h"
-#include "render_sys/render.h"
-
+#include "core.h"
+#include "render/render.h"
 #include <stdlib.h>
+#include "glad/glad.h"
+#include <glfw/glfw3.h>
+
+uint8_t GraphicsEngine_Init(GraphicsEngine_t* eng){
+    if(!eng){
+        return 0;
+    }
+    
+    eng->mainCanvas = Canvas_Init(800, 600, "Game Engine");
+    eng->frameBuffer = FrameBuffer_Init();
 
 
-EngCore_t* Core_Init(void){
-    EngCore_t* core = malloc(sizeof(EngCore_t));
-    RenderSystem_Init(core->renderSys);
 
-
-    return core;
+    return 1;
 }
 
 
-void Core_MainLoop(EngCore_t* eCore){
+
+
+
+void DrawStep(GraphicsEngine_t* eng){
+    
+
+    
+
 
 }

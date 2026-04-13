@@ -1,4 +1,4 @@
-#include "fbuffer.h"
+#include "render_internal.h"
 #include <stdlib.h>
 
 
@@ -23,7 +23,7 @@ static inline uint8_t FrameSyncCheck(Frame_t* sliceCtx ){
 
 
 
-void FrameBufferShutdown(FrameBuffer_t* fBuffer){
+void FrameBuffer_Shutdown(FrameBuffer_t* fBuffer){
     if(!fBuffer){
         return;
     }
@@ -45,7 +45,7 @@ void FrameBufferShutdown(FrameBuffer_t* fBuffer){
 
 
 
-FrameBuffer_t* FrameBufferInit(void){
+FrameBuffer_t* FrameBuffer_Init(void){
     FrameBuffer_t* rBuffer = malloc(sizeof(FrameBuffer_t));
 
     glGenBuffers(1, &rBuffer->bufferID);
@@ -74,7 +74,7 @@ FrameBuffer_t* FrameBufferInit(void){
 
 
 
-uint8_t GetFrame(FrameBuffer_t* fBuffer, uint8_t** destPtr){
+uint8_t FrameBuffer_GetFrame(FrameBuffer_t* fBuffer, uint8_t** destPtr){
     if(!fBuffer || !destPtr){
         return 0;
     }

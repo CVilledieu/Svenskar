@@ -1,4 +1,4 @@
-#include "canvas.h"
+#include "render_internal.h"
 
 
 static void ResizeCallBackCanvas(GLFWwindow* window, int width, int height){
@@ -8,7 +8,31 @@ static void ResizeCallBackCanvas(GLFWwindow* window, int width, int height){
 
 
 
-uint8_t DisplayCanvas(Canvas_t* canvas){
+void Canvas_Destroy(Canvas_t* canvas){
+    if(!canvas){
+        return;
+    }
+
+
+
+
+}
+
+
+
+uint8_t Canvas_Hide(Canvas_t* canvas){
+    if(!canvas){
+        return 0;
+    }
+
+
+
+    return 1;
+}
+
+
+
+uint8_t Canvas_Show(Canvas_t* canvas){
     if(!canvas){
         return 0;
     }
@@ -24,7 +48,7 @@ uint8_t DisplayCanvas(Canvas_t* canvas){
 
 
 
-Canvas_t* NewCanvas(int width, int height, const char* title){
+Canvas_t* Canvas_Init(int width, int height, const char* title){
     if(!glfwInit() || !width || !height){
         return NULL;
     }
