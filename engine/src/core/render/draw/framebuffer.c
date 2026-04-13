@@ -1,4 +1,4 @@
-#include "render_internal.h"
+#include "render/draw/internal.h"
 #include <stdlib.h>
 
 
@@ -46,26 +46,29 @@ void FrameBuffer_Shutdown(FrameBuffer_t* fBuffer){
 
 
 FrameBuffer_t* FrameBuffer_Init(void){
-    FrameBuffer_t* rBuffer = malloc(sizeof(FrameBuffer_t));
+    FrameBuffer_t* fBuffer = malloc(sizeof(FrameBuffer_t));
+    
+    fBuffer->currentSlice = 0;
+    
 
-    glGenBuffers(1, &rBuffer->bufferID);
-    glBindBuffer(GL_SHADER_STORAGE_BUFFER, rBuffer->bufferID);
+
+    glGenBuffers(1, &fBuffer->bufferID);
+    glBindBuffer(GL_SHADER_STORAGE_BUFFER, fBuffer->bufferID);
     glBufferStorage(GL_SHADER_STORAGE_BUFFER, FBUFFER_TOTAL_BYTES, NULL, GL_FLAGS_STORAGE);
-    rBuffer->buffer = (uint8_t)glMapBufferRange(GL_SHADER_STORAGE_BUFFER, 0, FBUFFER_TOTAL_BYTES, GL_FLAGS_MAP);
+    fBuffer->buffer = (uint8_t)glMapBufferRange(GL_SHADER_STORAGE_BUFFER, 0, FBUFFER_TOTAL_BYTES, GL_FLAGS_MAP);
 
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
-    if(!rBuffer->buffer){
-        glDeleteBuffers(1, &rBuffer->bufferID);
+    if(!fBuffer->buffer){
+        glDeleteBuffers(1, &fBuffer->bufferID);
         return NULL;
     }
 
     for (size_t i = 0; i < (size_t)FBUFFER_FRAME_COUNT; i++){
-        rBuffer->frameList[i].offset = i * FRAME_BYTES;
+        fBuffer->frameList[i].offset = i * FRAME_BYTES;
     }
 
-    rBuffer->currentSlice = 0;
 
-    return rBuffer;
+    return fBuffer;
 }
 
 
