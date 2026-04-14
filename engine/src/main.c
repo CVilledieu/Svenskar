@@ -1,5 +1,5 @@
 #include "svenSkar/engine.h"
-#include "graphics_engine/core.h"
+#include "core/core.h"
 #include "modules/apphook/wrapper.h"
 
 
