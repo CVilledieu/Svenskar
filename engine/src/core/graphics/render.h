@@ -2,14 +2,13 @@
 
 #include <stdint.h>
 
-
-
+typedef struct Canvas_t Canvas_t;
+typedef struct Materials_t Materials_t;
 
 
 typedef struct GraphicsEngine_t{
-    FrameBuffer_t* frameBuffer;
     Canvas_t* mainCanvas;
-    Materials_t* materials;
+    Materials_t* materialSystem;
 }GraphicsEngine_t;
 
 

@@ -1,7 +1,6 @@
 #pragma once
 
-typedef struct SEng_t SEng_t;
-typedef uint8_t SEResult_t;
+typedef struct SEcontext_t SEcontext_t;
 
-SEResult_t Sven_Init(SEng_t* se);
+uint8_t Game_Init(SEcontext_t* ctx);
 

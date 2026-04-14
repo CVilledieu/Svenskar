@@ -2,5 +2,6 @@
     "cSpell.words": [
         "Svenskar",
 
-    ]
+    ],
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools"
 }

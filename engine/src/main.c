@@ -1,19 +1,14 @@
-#include "svenSkar/engine.h"
-#include "core/core.h"
-#include "modules/apphook/wrapper.h"
-
-
+#include "core.h"
 
 
 int main(void){
-    GraphicsEngine_Init();
+    EngineCore_t eCore = {0};
 
-    AppHook_Init();
-    
-    Module_Init();
+    if(!EngineCore_Init(&eCore)){
+        return 1;
+    }
 
-
-    GraphicsEngine_Run();
+    EngineCore_Main(&eCore);
 
     return 0;
 }

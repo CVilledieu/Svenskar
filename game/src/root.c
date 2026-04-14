@@ -3,7 +3,12 @@
 
 
 
-void SEC_Init(SEng_t* se){
+void Game_Init(SEcontext_t* ctx){
     
 
+}
+
+
+void Game_Main(SEcontext_t* ctx){
+    
 }

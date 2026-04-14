@@ -1,5 +1,5 @@
 #pragma once
-#include "render/config.h"
+#include "graphics/config.h"
 
 
 typedef uint32_t ShaderEffectID_t;

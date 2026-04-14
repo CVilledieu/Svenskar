@@ -1,24 +1,36 @@
 #include "core.h"
-#include "render/render.h"
-#include <stdlib.h>
-#include "glad/glad.h"
-#include <glfw/glfw3.h>
-
-void GraphicsEngine_Main(){
-    GraphicsEngine_t engine = {0};
+#include <stdint.h>
 
 
+
+uint8_t EngineCore_Init(EngineCore_t* eCore){
+    if(!eCore || !HookIntoGameApp(&eCore->appHook)){
+        return 0;
+    }
+
+
+
+
+
+    return 1;
+}
+
+
+void EngineCore_Shutdown(EngineCore_t* eCore){
     
+    GraphicsEngine_Shutdown(eCore->renderer);
+    ShutdownGameApp(eCore);
 }
 
 
 
 
-
-void DrawStep(GraphicsEngine_t* eng){
+uint8_t EngineCore_Main(EngineCore_t* eCore){
     
 
-    
-
-
+    EngineCore_Shutdown(eCore);
+    return 1;
 }
+
+
+
