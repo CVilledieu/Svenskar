@@ -1,9 +1,15 @@
-#include "SvenSkar/Hooks.h"
-#include "core/core.h"
+#include "svenSkar/engine.h"
+#include "graphics_engine/core.h"
+#include "modules/apphook/wrapper.h"
+
+
+
 
 int main(void){
-    AppHook_Init();
     GraphicsEngine_Init();
+
+    AppHook_Init();
+    
     Module_Init();
 
 
