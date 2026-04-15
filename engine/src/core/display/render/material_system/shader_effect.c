@@ -1,4 +1,4 @@
-#include "graphics/materials/internal.h"
+#include "display/render/material_system/materials.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

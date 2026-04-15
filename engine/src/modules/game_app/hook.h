@@ -11,22 +11,22 @@ typedef struct UserEventCallbacks_t{
 
 
 typedef struct EngineEventCallbacks_t{
-    void (*UpdateCallback)(SEcontext_t* ctx);
+    void (*UpdateCallback)(SVGE_t* ctx);
     void (*ShutdownCallback)(void);
 }EngineEventCallbacks_t;
 
 // Handler for wrapping and unwrapping GameApp context
 typedef struct AppHook_t{
     EngineCore_t* core;
-    SEcontext_t wrapper;
+    SVGE_t wrapper;
     void (*ShutdownCallback)(void);
 
 }AppHook_t;
 
 
-typedef struct SEcontext_t{
+typedef struct SVGE_t{
     AppHook_t* hook;
-}SEcontext_t;
+}SVGE_t;
 
-uint8_t HookIntoGameApp(EngineCore_t* eCore);
-void ShutdownGameApp(AppHook_t* appHook);
+uint8_t HookIntoAppLayer(EngineCore_t* eCore);
+void ShutdownAppLayer(AppHook_t* appHook);

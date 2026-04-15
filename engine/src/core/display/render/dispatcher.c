@@ -1,10 +1,12 @@
-#include "graphics/render.h"
-#include "graphics/config.h"
-#include "graphics/canvas/canvas.h"
-#include "graphics/materials/handler.h"
-#include "graphics/draw/handler.h"
+#include "display/render/dispatcher.h"
+#include "display/config.h"
+#include "display/render/objstream/objbuffer.h"
+#include "display/render/material_system/materials.h"
 
 
+uint8_t Dispatcher_Init(Dispatcher_t* dispatch){
+
+}
 
 
 

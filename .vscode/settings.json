@@ -1,7 +1,10 @@
 {
     "cSpell.words": [
-        "Svenskar",
-
+        "SVGE"
     ],
-    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools"
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+    "cSpell.ignoreWords": [
+        "Econtext",
+        "ssbo"
+    ]
 }

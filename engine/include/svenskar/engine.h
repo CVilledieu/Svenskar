@@ -1,6 +1,11 @@
 #pragma once
 
-typedef struct SEcontext_t SEcontext_t;
+typedef struct SVGE_t SVGE_t;
 
-uint8_t Game_Init(SEcontext_t* ctx);
+
+// Entry function to be defined by app layer
+uint8_t AppRoot(SVGE_t* ctx);
+
+
+
 

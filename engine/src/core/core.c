@@ -4,7 +4,7 @@
 
 
 uint8_t EngineCore_Init(EngineCore_t* eCore){
-    if(!eCore || !HookIntoGameApp(&eCore->appHook)){
+    if(!eCore || !HookIntoAppLayer(&eCore->appHook)){
         return 0;
     }
 
@@ -19,7 +19,7 @@ uint8_t EngineCore_Init(EngineCore_t* eCore){
 void EngineCore_Shutdown(EngineCore_t* eCore){
     
     GraphicsEngine_Shutdown(eCore->renderer);
-    ShutdownGameApp(eCore);
+    ShutdownAppLayer(eCore);
 }
 
 

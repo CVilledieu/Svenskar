@@ -1,6 +1,4 @@
-#include "graphics/materials/handler.h"
-#include "graphics/materials/internal.h"
-
+#include "display/render/material_system/materials.h"
 
 
 // Material shader effect

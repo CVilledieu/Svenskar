@@ -1,5 +1,5 @@
 #pragma once
-#include "graphics/config.h"
+#include "display/config.h"
 
 
 //Canvas
