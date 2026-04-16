@@ -1,6 +1,8 @@
 #pragma once
-#include "display/config.h"
 
+#include <stdint.h>
+#include "glad/glad.h"
+#include <glfw/glfw3.h>
 
 //Canvas
 typedef struct GLFWwindow Canvas_t;

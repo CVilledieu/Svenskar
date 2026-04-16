@@ -1,5 +1,4 @@
-#include "display/canvas/canvas.h"
-
+#include "canvas.h"
 
 static void ResizeCallBackCanvas(GLFWwindow* window, int width, int height){
     (void)window;
