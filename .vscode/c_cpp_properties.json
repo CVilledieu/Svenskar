@@ -3,7 +3,10 @@
         {
             "name":"",
             "includePath":[
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/engine/include/*",
+                "${workspaceFolder}/engine/src/core/*",
+                "${workspaceFolder}/engine/src/module/*",
+                "${workspaceFolder}/engine/src/common/*"
             ],
             "intelliSenseMode": "windows-gcc-x64",
             "cStandard": "c17",

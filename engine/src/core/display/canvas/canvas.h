@@ -4,6 +4,12 @@
 #include "glad/glad.h"
 #include <glfw/glfw3.h>
 
+#ifndef MAIN_CANVAS_DEFAULTS
+    
+#endif
+
+
+
 //Canvas
 typedef struct GLFWwindow Canvas_t;
 
