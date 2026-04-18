@@ -65,6 +65,6 @@ static inline uint32_t Dispatch_ModelData(uint8_t* writeBuffer){
 
 
 static inline uint8_t Dispatch_ApplyGeometry(MeshID_t* meshList, uint32_t count){
-    return AssetClerk_DrawMeshIDList(meshList, count);
+    return AssetClerk_DrawMeshList(meshList, count);
 }
 

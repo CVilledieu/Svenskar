@@ -2,5 +2,13 @@
 
 ## Overview
 
-Svenskar Engine
+## Architecture Overview
 
+```
+.
+├──core/
+│ 
+├
+│
+└
+```
