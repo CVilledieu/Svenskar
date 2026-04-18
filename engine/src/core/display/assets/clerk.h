@@ -9,7 +9,8 @@ typedef struct Mesh_t{
 }Mesh_t;
 
 typedef struct MeshIdStack_t{
-    
+    uint32_t pos;
+    MeshID_t* stack;    
 }MeshIdStack_t;
 
 typedef struct AssetClerk_t{
