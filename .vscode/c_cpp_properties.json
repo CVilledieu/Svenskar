@@ -4,8 +4,8 @@
             "name":"",
             "includePath":[
                 "${workspaceFolder}/engine/include/*",
+                "${workspaceFolder}/engine/src/*",
                 "${workspaceFolder}/engine/src/core/*",
-                "${workspaceFolder}/engine/src/module/*",
                 "${workspaceFolder}/engine/src/common/*"
             ],
             "intelliSenseMode": "windows-gcc-x64",

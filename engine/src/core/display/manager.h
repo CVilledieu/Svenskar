@@ -3,9 +3,9 @@
 #include <stdint.h>
 
 typedef struct DisplayManager_t{
-    Canvas_t* mainWindow;
-    Dispatch_t dispatch;
-
+    uint8_t open;
+    Canvas_t* window;
+    Dispatch_t dispatch;   
 }DisplayManager_t;
 
 uint8_t DisplayManager_Init(DisplayManager_t* dm);
