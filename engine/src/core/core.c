@@ -1,13 +1,14 @@
 #include "core.h"
 #include <stdint.h>
 #include "display/manager.h"
-#include "modules/game_app/hook.h"
+#include "game_app/hook.h"
 
 uint8_t EngineCore_Init(EngineCore_t* eCore){
     if(!eCore || !HookIntoAppLayer(&eCore->appHook)){
         return 0;
     }
 
+    DisplayManager_Init(&eCore->display);
 
 
 

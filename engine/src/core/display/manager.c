@@ -1,5 +1,5 @@
 #include "display/manager.h"
-#include "display/renderer/dispatch/dispatch.h"
+#include "display/dispatch/dispatch.h"
 #include "display/canvas/canvas.h"
 
 

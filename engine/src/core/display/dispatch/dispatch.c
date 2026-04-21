@@ -1,5 +1,5 @@
-#include "display/renderer/dispatch/dispatch.h"
-#include "display/renderer/assets/clerk.h"
+#include "display/dispatch/dispatch.h"
+#include "blue_prints/assets/clerk.h"
 
 
 // Dev note: Is waiting for the fence the best option?
@@ -45,8 +45,8 @@ void Dispatch_Init(Dispatch_t* dispatch){
     glGenBuffers(1, &dispatch->ssboID);
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, dispatch->ssboID);
 
-    glBufferStorage(GL_SHADER_STORAGE_BUFFER, TOTAL_BUFFER_SIZE, NULL, GL_FLAGS_STORAGE);
-    dispatch->buffer = (uint8_t)glMapBufferRange(GL_SHADER_STORAGE_BUFFER, 0, TOTAL_BUFFER_SIZE, GL_FLAGS_MAP);
+    glBufferStorage(GL_SHADER_STORAGE_BUFFER, BUFFER_TOTAL_BYTES, NULL, GL_FLAGS_STORAGE);
+    dispatch->buffer = (uint8_t)glMapBufferRange(GL_SHADER_STORAGE_BUFFER, 0, BUFFER_TOTAL_BYTES, GL_FLAGS_MAP);
 
 
 }
@@ -55,13 +55,17 @@ void Dispatch_Init(Dispatch_t* dispatch){
 
 
 void Dispatch_Shutdown(Dispatch_t* dispatch){
+    if(!dispatch){
+        return;
+    }
 
+    free(dispatch->buffer);
 }
 
 
 
 
-void Dispatch_NewBatch(Dispatch_t* dispatch){
+void Dispatch_NewBatch(Dispatch_t* dispatch, MeshID_t* meshList, uint32_t listLength){
     uint8_t batchID = dispatch->nextBatchID;
     Batch_t* batch = &dispatch->batches[batchID];
     if(batch->fence != NULL){
@@ -77,17 +81,20 @@ void Dispatch_NewBatch(Dispatch_t* dispatch){
 
     uint32_t modelLength = Dispatch_ModelData(writer);
     writer += modelLength;
+
+
     //uint32_t lightLength = Dispatch_LightingData(writer);
     //writer += lightLength;
     uint32_t totalLength = (uint32_t)(writer - &dispatch->buffer[batch->offset]);
     
     //Submit Batch
     glBindBufferRange(GL_SHADER_STORAGE_BUFFER, 0, dispatch->ssboID, batch->offset, totalLength);
-    Dispatch_ApplyGeometry(&dispatch->meshList, dispatch->meshCount);
+
+    Dispatch_ApplyGeometry(meshList, listLength);
 
 
     batch->fence = glFenceSync(GL_SYNC_GPU_COMMANDS_COMPLETE, 0);
     
-    dispatch->nextBatchID = (dispatch->nextBatchID + 1) % BUFFER_BATCH_COUNT;
+    dispatch->nextBatchID = (dispatch->nextBatchID + 1) % BATCH_ROTATION_COUNT;
 
 }

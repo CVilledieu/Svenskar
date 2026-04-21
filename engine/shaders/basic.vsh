@@ -5,12 +5,11 @@ layout(location = 1) in vec2 texCoords;
 
 out vec2 fragTexCoords;
 
-layout(std430, binding = 0) readonly buffer View_t{
+
+
+layout(std430, binding = ) readonly buffer TransformData {
     mat4 projectionMatrix;
     mat4 viewMatrix;
-};
-
-layout(std430, binding = 1) readonly buffer TransformData {
     mat4 modelMatrix[];
 };
 
