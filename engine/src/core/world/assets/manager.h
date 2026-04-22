@@ -19,8 +19,8 @@ typedef struct AssetManager_t{
 }AssetManager_t;
 
 
-void AssetManager_Init(AssetManager_t* ac);
-uint8_t AssetManager_Shutdown(AssetManager_t* ac);
+void AssetManager_Init(AssetManager_t* manger);
+uint8_t AssetManager_Shutdown(AssetManager_t* manger);
 
-uint8_t AssetClerk_NewAsset(AssetManager_t* ac);
-uint8_t AssetClerk_DrawMeshList(MeshID_t* idList, uint32_t listCount);
+uint8_t AssetClerk_NewAsset(AssetManager_t* manger, MeshID_t* meshIdPtr);
+uint8_t AssetClerk_DrawMeshList(MeshID_t* idList, uint32_t listCount); 

@@ -3,12 +3,3 @@
 ## Overview
 
 ## Architecture Overview
-
-```
-.
-├──core/
-│ 
-├
-│
-└
-```

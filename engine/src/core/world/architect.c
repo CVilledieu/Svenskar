@@ -1,11 +1,14 @@
-#include "architect/drafting.h"
-#include "architect/assets/clerk.h"
+#include "world/architect.h"
+#include "world/assets/manager.h"
 
 
 
 void Architect_Init(Architect_t* architect){
     AssetManager_Init(&architect->assMan);
+    Entities_Init()
 }
+
+
 
 
 
