@@ -1,4 +1,4 @@
-#include "display/dispatch/dispatch.h"
+#include "display/dispatch.h"
 #include "world/architect.h"
 
 

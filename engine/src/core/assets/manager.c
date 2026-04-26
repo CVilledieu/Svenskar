@@ -9,9 +9,9 @@ void AssetManager_Init(AssetManager_t* manger){
 }
 
 
-uint8_t AssetClerk_NewAsset(AssetManager_t* manger, MeshID_t* meshIdPtr){
+FuncRes_t AssetClerk_NewAsset(AssetManager_t* manger, MeshID_t* meshIdPtr){
     
 }
-uint8_t AssetClerk_DrawMeshList(MeshID_t* idList, uint32_t listCount){
+FuncRes_t AssetClerk_DrawMeshList(MeshID_t* idList, uint32_t listCount){
 
 }

@@ -1,4 +1,4 @@
-#include "applayer/hook.h"
+#include "AppLayer/EngHook.h"
 
 
 /*  Due to the engine and the API having different Coding conventions the Game_app module
@@ -12,7 +12,7 @@
 
 
 
-uint8_t HookIntoAppLayer(EngineCore_t* eCore){
+FuncRes_t HookIntoAppLayer(EngineCore_t* eCore){
     SVGE_t wrapper;
     wrapper.hook = &eCore->appHook;
 

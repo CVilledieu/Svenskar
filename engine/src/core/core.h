@@ -1,9 +1,10 @@
 #pragma once
 
+typedef struct AppLayer_t AppLayer_t;
 
 typedef struct EngineCore_t{
-    AppHook_t appHook;
     DisplayManager_t display;
+    AppLayer_t* app;
 }EngineCore_t;
 
 // Called by main.c

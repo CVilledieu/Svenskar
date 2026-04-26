@@ -28,5 +28,5 @@ typedef struct SVGE_t{
     AppHook_t* hook;
 }SVGE_t;
 
-uint8_t HookIntoAppLayer(EngineCore_t* eCore);
+FuncRes_t HookIntoAppLayer(EngineCore_t* eCore);
 void ShutdownAppLayer(AppHook_t* appHook);
