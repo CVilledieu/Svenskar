@@ -1,7 +1,7 @@
 #include "core.h"
 #include <stdint.h>
 #include "display/manager.h"
-#include "game_app/hook.h"
+
 
 uint8_t EngineCore_Init(EngineCore_t* eCore){
     if(!eCore || !HookIntoAppLayer(&eCore->appHook)){
@@ -18,15 +18,22 @@ uint8_t EngineCore_Init(EngineCore_t* eCore){
 
 
 void EngineCore_Shutdown(EngineCore_t* eCore){
-    
+    if(!eCore){
+        return 0;
+    }
+
     GraphicsEngine_Shutdown(eCore->display);
     ShutdownAppLayer(eCore);
+
+
+
 }
 
 
 
 
-uint8_t EngineCore_Main(EngineCore_t* eCore){
+void EngineCore_Main(EngineCore_t* eCore){
+
     DisplayManager_t* display = &eCore->display;
 
     while(display->open){
@@ -35,7 +42,7 @@ uint8_t EngineCore_Main(EngineCore_t* eCore){
     
 
     EngineCore_Shutdown(eCore);
-    return 1;
+
 }
 
 

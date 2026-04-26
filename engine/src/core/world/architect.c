@@ -13,7 +13,7 @@ void Architect_Init(Architect_t* architect){
 
 
 
-uint8_t Architect_Submit(uint8_t* displayBuffer){
+FuncRes_t Architect_Submit(FuncRes_t* displayBuffer){
     if(!displayBuffer){
         return 0;
     }

@@ -1,13 +1,11 @@
 #pragma once
 
-
-#include "common/eng_types.h"
-
+#include <stdint.h>
 typedef struct CameraSys_t{
-    RendMtxIndx_t projection[16];
-    RendMtxIndx_t view[16];
+    float projection[16];
+    float view[16];
 }CameraSys_t;
 
-typedef struct Entities_t{
-    RendMtxIndx_t
-}Entities_t;
+
+
+FuncRes_t Camera_Init(CameraSys_t* cam);

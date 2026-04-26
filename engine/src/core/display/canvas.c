@@ -1,4 +1,4 @@
-#include "canvas.h"
+#include "display/canvas.h"
 
 static void ResizeCallBackCanvas(GLFWwindow* window, int width, int height){
     (void)window;
@@ -7,13 +7,12 @@ static void ResizeCallBackCanvas(GLFWwindow* window, int width, int height){
 
 
 
-void Canvas_Destroy(Canvas_t* canvas){
+void Canvas_Shutdown(Canvas_t* canvas){
     if(!canvas){
         return;
     }
 
-
-
+    glfwDestroyWindow(canvas);
 
 }
 
